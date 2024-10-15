@@ -1,0 +1,49 @@
+<p>crear-alumno works!</p>
+<div>
+    <form>
+        <div>
+            <label>Nombre:</label>
+            <input type="text" [(ngModel)]="nuevoAlumno.nombre" name="nombre" >
+        </div>
+        <div>
+            <label>Paterno:</label>
+            <input type="text" [(ngModel)]="nuevoAlumno.paterno" name="paterno" >
+        </div>
+        <div>
+            <label>Materno:</label>
+            <input type="text" [(ngModel)]="nuevoAlumno.materno" name="materno" >
+        </div>
+        <div>
+            <label>Nacimiento:</label>
+            <input type="date" [(ngModel)]="nuevoAlumno.nacimiento" name="nacimiento" >
+        </div>
+
+        <div>
+            <label>Grado:</label>
+            <select [(ngModel)]="gradoSeleccionado" name="grado">
+                <option value="" disabled selected>Seleccionar genero:</option>
+                <option *ngFor="let grado of grados" [ngValue]="grado">{{grado.descripcion}}</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Cursos:</label>
+            <select [(ngModel)]="cursoSeleccionado" name="curso">
+                <option value="" disabled selected>Seleccione un curso:</option>
+                <option *ngFor="let curso of cursos" [ngValue]="curso">{{curso.descripcion}}</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Salones:</label>
+            <select [(ngModel)]="salonSeleccionado" name="salones">
+                <option value="" disabled selected>Seleccione un Salon:</option>
+                <option *ngFor="let salon of salones" [ngValue]="salon">{{salon.descripcion}}</option>
+            </select>
+        </div>
+
+        <button (click)="guardar()">guardar</button>
+
+
+    </form>
+</div>
